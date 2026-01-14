@@ -1,0 +1,6 @@
+# Database configuration
+database.php
+
+# Operating System files
+.DS_Store
+Thumbs.db

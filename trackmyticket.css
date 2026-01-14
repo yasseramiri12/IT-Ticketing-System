@@ -1,0 +1,134 @@
+/* General Styles for the Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; /* Distributes the nav items evenly */
+}
+
+nav ul li {
+    display: inline; /* Display items in a row */
+}
+
+nav ul li a {
+    color: white; /* Text color for links */
+    text-decoration: none; /* Removes underline from links */
+    padding: 10px; /* Space around the links */
+    transition: background-color 0.3s ease; /* Transition effect for hover */
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Ticket Tracking Section */
+#track-ticket {
+    padding: 50px 0;
+    text-align: center;
+}
+
+#track-ticket h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f8f9fa; /* Light gray background for footer */
+}
+
+/* ticket_styles.css */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Optional: Style the table headers */
+th {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Optional: Add a margin to the top of the table */
+table {
+    margin-top: 20px;
+}
+
