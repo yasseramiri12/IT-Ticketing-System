@@ -1,53 +1,112 @@
-# IT Ticketing System
+# 🛠️ IT Ticketing System
 
-A web-based IT Ticketing System built with **PHP** and **MySQL**. This application allows users to submit support tickets, track their status, and enables administrators to manage tickets and user accounts.
+[![PHP Version](https://img.shields.io/badge/php-%3E%3D%208.1-blue.svg)](https://php.net)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![MySQL](https://img.shields.io/badge/database-MySQL-orange.svg)](https://mysql.com)
 
-## Features
+A professional, web-based IT Ticketing System built for internal company support. This application streamlines the process of reporting technical issues and tracking resolutions between employees and the IT department.
 
-- **User Portal**:
-    - **Submit Tickets**: Users can report hardware, software, network, or other issues.
-    - **Track Tickets**: Real-time status updates on submitted tickets.
-    - **Ticket History**: View past tickets (requires login).
-- **Admin Dashboard**:
-    - **Manage Tickets**: View, update, and close tickets.
-    - **Manage Users**: Create and manage user accounts and roles (Admin/Client).
-- **Authentication**: secure login system for both Admins and Clients.
+---
 
-## Installation
+## 🚀 Features
 
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/yasseramiri12/IT-Ticketing-System.git
-    ```
+### 👤 User Portal (Client)
+- **Instant Ticket Submission**: Effortlessly report hardware, software, or network issues.
+- **Live Tracking**: Monitor the "Progress" and "Urgency" of your tickets in real-time.
+- **Easy Access**: Clean interface designed for quick navigation.
 
-2.  **Database Setup**:
-    - Import the database schema (if you have an SQL file, otherwise create a database named `ticket`).
-    - Create the necessary tables (`users`, `it_ticket`, `manage tickets`).
+### 🛡️ Admin Dashboard
+- **Ticket Lifecycle Management**: View, update progress (In Progress, Completed, Held), and set urgency levels.
+- **User Management**: Create, edit, and specialized roles (Admin vs. Client).
+- **Control Panel**: Unified view of all organizational IT needs.
 
-3.  **Configuration**:
-    - Rename `database.example.php` to `database.php`.
-    - Open `database.php` and update the credentials to match your local MySQL setup:
-      ```php
-      $db_server = "localhost";
-      $db_user = "root";       // Your MySQL username
-      $db_pass = "";           // Your MySQL password
-      $db_name = "ticket";     // Your Database name
-      ```
+---
 
-4.  **Run the Application**:
-    - If using XAMPP/WAMP, place the project folder in `htdocs` or `www`.
-    - Or run with PHP's built-in server:
-      ```bash
-      php -S localhost:8000
-      ```
-    - Visit `http://localhost:8000/homepage.php` in your browser.
+## 📂 Project Structure
 
-## Technologies Used
+The project follows a clean, organized directory structure for better maintainability:
 
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Backend**: Native PHP
-- **Database**: MySQL
+```text
+├── assets/
+│   ├── css/        # Component-specific stylesheets
+│   └── js/         # Client-side JavaScript logic
+├── config/
+│   └── database.php # Database connection & environment constants
+├── sql/
+│   └── schema.sql   # Full database schema and seed data
+├── index.php        # Entry point (auto-redirect)
+└── [pages].php      # Core application pages (login, admin, etc.)
+```
 
-## contributing
+---
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## ⚙️ Installation & Setup
+
+### 1. Prerequisites
+- PHP 8.1 or higher
+- MySQL/MariaDB Server
+- A web server (Apache, Nginx, or PHP Built-in Server)
+
+### 2. Clone the Repository
+```bash
+git clone https://github.com/yasseramiri12/IT-Ticketing-System.git
+cd IT-Ticketing-System
+```
+
+### 3. Database Configuration
+1. Login to your MySQL server.
+2. Create a database named `ticket`.
+3. Import the schema found in `sql/schema.sql`:
+   ```bash
+   mysql -u your_username -p ticket < sql/schema.sql
+   ```
+
+### 4. Application Configuration
+1. Navigate to the `config/` directory.
+2. Open `database.php` and update your MySQL credentials:
+   ```php
+   $db_server = "localhost";
+   $db_user   = "root";          // Your MySQL username
+   $db_pass   = "your_password"; // Your MySQL password
+   $db_name   = "ticket";
+   ```
+
+### 5. Start the Server
+Run with PHP's built-in development server:
+```bash
+php -S localhost:8000
+```
+Then visit: **[http://localhost:8000](http://localhost:8000)**
+
+---
+
+## 🔐 Default Credentials
+
+| Role  | Username | Password |
+| :---  | :---     | :---     |
+| **Admin** | `admin`   | `admin`  |
+| **Client** | `yasser`  | `password123` |
+
+---
+
+## 🛠️ Technologies Used
+
+- **Frontend**: Semantic HTML5, CSS3 (Modern UI), Native JavaScript
+- **Backend**: Native PHP (SAPI-compatible)
+- **Database**: MySQL with MySQLi Prepared Statements for Security
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+Distributed under the MIT License. See `LICENSE` for more information.
