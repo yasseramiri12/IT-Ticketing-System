@@ -28,16 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (empty($password)) {
         $login_error = "Please enter your password.";
     } else {
-        // First, check for hardcoded admin credentials (simple fallback)
-        if ($username === 'admin' && $password === 'admin') {
-            $_SESSION['user_id'] = 1;
-            $_SESSION['username'] = $username;
-            $_SESSION['role'] = 'admin';
-            header("Location: admin.php");
-            exit();
-        }
-
-        // Otherwise, query the database for user credentials
+        // Query the database for user credentials
         $sql = "SELECT id, password, role FROM users WHERE user = ?";
         $stmt = $conn->prepare($sql);
 
