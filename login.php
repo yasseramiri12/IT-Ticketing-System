@@ -1,6 +1,6 @@
 <?php
 // Include your database connection file
-include("database.php");
+include("config/database.php");
 
 // Start session only if not already started
 if (session_status() == PHP_SESSION_NONE) {
@@ -88,7 +88,7 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - IT Ticketing System</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
     <header>
@@ -132,7 +132,7 @@ mysqli_close($conn);
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
 

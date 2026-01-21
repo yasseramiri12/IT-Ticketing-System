@@ -1,5 +1,5 @@
 <?php
-include("database.php");
+include("config/database.php");
 session_start();
 
 // Check if the user is logged in and is an admin
@@ -62,7 +62,7 @@ $result = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Users - IT Ticketing System</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>

@@ -1,6 +1,6 @@
 
 <?php
-    include("database.php");
+    include("config/database.php");
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Ticketing System</title>
-    <link rel="stylesheet" href="createticket.css">
+    <link rel="stylesheet" href="assets/css/createticket.css">
 </head>
 <body>
     <header>
@@ -83,13 +83,13 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
 
 <?php
 // Include your database connection file
-include("database.php");
+include("config/database.php");
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();

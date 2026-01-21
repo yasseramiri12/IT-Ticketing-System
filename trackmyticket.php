@@ -1,5 +1,5 @@
 <?php
-include("database.php");
+include("config/database.php");
 session_start(); // Start the session
 
 // Establish database connection
@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Track Your Ticket - IT Ticketing System</title>
-    <link rel="stylesheet" href="trackmyticket.css">
+    <link rel="stylesheet" href="assets/css/trackmyticket.css">
 </head>
 <body>
     <header>
@@ -109,7 +109,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
 
