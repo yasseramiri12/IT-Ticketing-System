@@ -66,8 +66,8 @@ cd IT-Ticketing-System
 2. Open `database.php` and update your MySQL credentials:
    ```php
    $db_server = "localhost";
-   $db_user   = "root";          // Your MySQL username
-   $db_pass   = "your_password"; // Your MySQL password
+   $db_user   = "your_username";
+   $db_pass   = "your_password";
    $db_name   = "ticket";
    ```
 
@@ -77,16 +77,6 @@ Run with PHP's built-in development server:
 php -S localhost:8000
 ```
 Then visit: **[http://localhost:8000](http://localhost:8000)**
-
----
-
-## 🔐 Default Credentials
-
-| Role  | Username | Password |
-| :---  | :---     | :---     |
-| **Admin** | `admin`   | `admin`  |
-| **Client** | `yasser`  | `password123` |
-
 ---
 
 ## 🛠️ Technologies Used

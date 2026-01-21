@@ -13,12 +13,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `user` (`user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Insert default admin user (username: admin, password: admin)
--- And default client user for testing (username: yasser, password: password123)
-REPLACE INTO `users` (`id`, `user`, `password`, `role`, `email`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin@example.com'),
-(2, 'yasser', 'password123', 'client', 'yasser@example.com');
-
 -- IT Tickets table (used for submission)
 CREATE TABLE IF NOT EXISTS `it_ticket` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
