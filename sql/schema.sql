@@ -1,4 +1,5 @@
 -- IT Ticketing System Database Schema
+-- Last updated: 2026-01-21
 
 -- Users table
 CREATE TABLE IF NOT EXISTS `users` (
@@ -13,22 +14,33 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Insert default admin user (username: admin, password: admin)
-INSERT INTO `users` (`user`, `password`, `role`, `email`) VALUES
-('admin', 'admin', 'admin', 'admin@example.com');
+-- And default client user for testing (username: yasser, password: password123)
+REPLACE INTO `users` (`id`, `user`, `password`, `role`, `email`) VALUES
+(1, 'admin', 'admin', 'admin', 'admin@example.com'),
+(2, 'yasser', 'password123', 'client', 'yasser@example.com');
 
--- IT Tickets table
+-- IT Tickets table (used for submission)
 CREATE TABLE IF NOT EXISTS `it_ticket` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `category` varchar(100) DEFAULT NULL,
-  `priority` enum('low','medium','high','critical') DEFAULT 'medium',
-  `description` text NOT NULL,
-  `status` enum('open','in_progress','resolved','closed') NOT NULL DEFAULT 'open',
+  `id client` int(11) DEFAULT NULL,
+  `created by` varchar(255) DEFAULT NULL,
+  `created for` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `issue type` varchar(255) DEFAULT NULL,
+  `issue description` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `it_ticket_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Manage Tickets table (used for admin dashboard and tracking)
+CREATE TABLE IF NOT EXISTS `manage tickets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id ticket` int(11) DEFAULT NULL,
+  `created by` varchar(100) DEFAULT NULL,
+  `created for` varchar(100) DEFAULT NULL,
+  `issue type` varchar(100) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `progress` varchar(50) DEFAULT 'In Progress',
+  `ticket urgency` varchar(50) DEFAULT 'medium',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
