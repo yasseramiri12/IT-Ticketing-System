@@ -16,7 +16,7 @@
             <nav>
                 <ul>
                     <li><a href="homepage.php">Home</a></li>
-                    <li><a href="manage users.php">Manage users</a></li>
+                    <li><a href="manage_users.php">Manage users</a></li>
                     <li><a href="login.php">Logout</a></li>
 
                 </ul>

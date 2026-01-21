@@ -27,7 +27,7 @@
             <div class="container">
                 <h2>Welcome to the IT Support Center</h2>
                 <p>Having an issue with your device or software? Submit a ticket and our team will assist you as soon as possible!</p>
-                <a href="createticket.html" class="cta-button">Submit a Ticket</a>
+                <a href="createticket.php" class="cta-button">Submit a Ticket</a>
             </div>
         </section>
 

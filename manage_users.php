@@ -104,7 +104,7 @@ $result = mysqli_query($conn, $sql);
                                             <input type='hidden' name='user_id' value='{$row['id']}'>
                                             <select name='role'>
                                                 <option value='admin' " . ($row['role'] == 'admin' ? 'selected' : '') . ">Admin</option>
-                                                <option value='user' " . ($row['role'] == 'user' ? 'selected' : '') . ">User</option>
+                                                <option value='client' " . ($row['role'] == 'client' ? 'selected' : '') . ">Client</option>
                                             </select>
                                             <button type='submit'>Update</button>
                                         </form>
