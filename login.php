@@ -7,13 +7,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Connection to the database
-$conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
 $login_error = "";
 
 // Check if the form is submitted
@@ -41,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->bind_result($user_id, $stored_password, $role);
                 $stmt->fetch();
 
-                // Direct comparison of passwords (consider using password_hash/verify in production)
+                // Direct comparison of passwords
                 if ($password === $stored_password) {
                     $_SESSION['user_id'] = $user_id;
                     $_SESSION['id'] = $user_id;
@@ -71,59 +64,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 mysqli_close($conn);
+
+$pageTitle = "Login";
+$extraCSS = ['login.css'];
+include('includes/header.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - IT Ticketing System</title>
-    <link rel="stylesheet" href="assets/css/login.css">
-</head>
-<body>
-    <header>
+<main>
+    <section id="login">
         <div class="container">
-            <h1>IT Ticketing System</h1>
-            <nav>
-                <ul>
-                    <li><a href="homepage.php">Home</a></li>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="createticket.php">Submit a Ticket</a></li>
-                    <li><a href="trackmyticket.php">Track Your Ticket</a></li>
-                </ul>
-            </nav>
+            <h2>Login</h2>
+            <?php if (!empty($login_error)): ?>
+                <p style="color: red; background: #fee; padding: 10px; border-radius: 5px;"><?php echo htmlspecialchars($login_error); ?></p>
+            <?php endif; ?>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" class="cta-button">Login</button>
+            </form>
+
         </div>
-    </header>
+    </section>
+</main>
 
-    <main>
-        <section id="login">
-            <div class="container">
-                <h2>Login</h2>
-                <?php if (!empty($login_error)): ?>
-                    <p style="color: red;"><?php echo htmlspecialchars($login_error); ?></p>
-                <?php endif; ?>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-
-                    <button type="submit">Login</button>
-                </form>
-                <p>Don't have an account? <a href="#">Sign up here</a></p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 IT Ticketing System. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script src="assets/js/script.js"></script>
-</body>
-</html>
-
+<?php include('includes/footer.php'); ?>

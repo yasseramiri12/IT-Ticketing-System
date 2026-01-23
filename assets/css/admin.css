@@ -1,224 +1,38 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-}
-
-/* Header */
-header {
-    background-color: #007bff; /* Blue color */
-    color: white;
-    padding: 20px 0;
-}
-
-header h1 {
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around; /* Distributes the nav items evenly */
-}
-
-nav ul li {
-    display: inline; /* Display items in a row */
-}
-
-nav ul li a {
-    color: white; /* Text color for links */
-    text-decoration: none; /* Removes underline from links */
-    padding: 10px; /* Space around the links */
-    transition: background-color 0.3s ease; /* Transition effect for hover */
-}
-
-nav ul li a:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-/* Admin Section */
-.admin-section {
-    padding: 50px 0;
-    text-align: center;
-}
+/* Admin & Management specific styles */
 
 .admin-section h2 {
-    margin-bottom: 20px;
-    font-size: 30px;
+    margin-bottom: 30px;
+    font-size: 28px;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+/* Specific table tweaks for admin */
+.admin-section table th {
+    white-space: nowrap;
 }
 
-table th,
-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-table th {
-    background-color: #007bff;
-    color: white;
-}
-
-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-table tr:hover {
-    background-color: #ddd;
-}
-
-/* Form Dropdown Styles */
-select[name="urgency_level"],
-select[name="progress"] {
-    padding: 10px; /* Add padding for better touch target */
-    border-radius: 5px; /* Rounded corners */
-    border: 1px solid #ddd; /* Light grey border */
-    font-size: 16px; /* Increase font size for readability */
-    margin-right: 10px; /* Space between dropdown and button */
-    color: #333; /* Darker text color */
-    transition: border-color 0.3s; /* Smooth border color transition */
-}
-
-/* Styling the update button */
-button[type="submit"] {
-    background-color: #007bff; /* Blue background */
-    color: white; /* White text */
-    padding: 10px 15px; /* Space around the text */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-    transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-/* Action Column Button Styles */
-.action-buttons {
-    display: flex; /* Arrange buttons in a row */
-    justify-content: space-around; /* Space between buttons */
-}
-
-.action-buttons button {
-    background-color: #007bff; /* Blue background */
-    color: white; /* White text */
-    padding: 8px 12px; /* Space around the text */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 14px; /* Smaller font size for action buttons */
-    margin: 0 5px; /* Margin between buttons */
-    transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-.action-buttons button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-/* Styles for the form within table cells */
-table td form {
-    display: flex; /* Use flexbox for better alignment */
-    align-items: center; /* Center items vertically */
-}
-
-/* Styling for Progress Dropdown */
-select[name='progress'] {
-    padding: 10px; /* Add padding for better touch target */
-    border-radius: 5px; /* Rounded corners */
-    border: 1px solid #ddd; /* Light grey border */
-    font-size: 16px; /* Increase font size for readability */
-    margin-right: 10px; /* Space between dropdown and button */
-    color: #333; /* Darker text color */
-    transition: border-color 0.3s; /* Smooth border color transition */
-    background-color: #fff; /* White background for the dropdown */
-    width: auto; /* Adjust width to fit the content */
-}
-
-/* Style for the options within the dropdown */
-select[name='progress'] option {
-    padding: 10px; /* Add padding to options */
-    background-color: #fff; /* Background color for options */
-    color: #333; /* Text color for options */
-}
-
-/* General table styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table th, table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-/* Role dropdown styling */
-select[name="role"] {
-    padding: 8px;
+.admin-section select {
+    padding: 6px;
     font-size: 14px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    color: #333;
-    transition: border-color 0.3s ease;
-    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: white;
 }
 
-select[name="role"]:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-button[type="submit"] {
-    padding: 8px 15px;
-    background-color: #28a745;
+.admin-section .delete-link {
+    background-color: var(--danger-color);
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-button[type="submit"]:hover {
-    background-color: #218838;
-}
-
-form {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-form button {
-    margin-left: 10px;
-}
-
-/* Table row hover effect */
-table tbody tr:hover {
-    background-color: #f1f1f1;
+.admin-section .delete-link:hover {
+    background-color: #b02a37;
+    color: white;
+    text-decoration: none;
 }
